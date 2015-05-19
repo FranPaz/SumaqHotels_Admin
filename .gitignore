@@ -4,7 +4,6 @@
 # User-specific files
 *.suo
 *.user
-<<<<<<< HEAD
 *.sln.docstates
 
 # Build results
@@ -39,13 +38,13 @@ bld/
 
 # Visual Studo 2015 cache/options directory
 .vs/
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
+
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-<<<<<<< HEAD
+
 *_i.c
 *_p.c
 =======
@@ -61,7 +60,6 @@ dlldata.c
 *_i.c
 *_p.c
 *_i.h
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
 *.ilk
 *.meta
 *.obj
@@ -81,7 +79,6 @@ dlldata.c
 *.vssscc
 .builds
 *.pidb
-<<<<<<< HEAD
 *.log
 *.scc
 
@@ -92,7 +89,7 @@ dlldata.c
 # Chutzpah Test files
 _Chutzpah*
 
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
+
 # Visual C++ cache files
 ipch/
 *.aps
@@ -106,25 +103,25 @@ ipch/
 *.vsp
 *.vspx
 
-<<<<<<< HEAD
+
 =======
 # TFS 2012 Local Workspace
 $tf/
 
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
+
 # Guidance Automation Toolkit
 *.gpState
 
 # ReSharper is a .NET coding add-in
 _ReSharper*/
 *.[Rr]e[Ss]harper
-<<<<<<< HEAD
+
 =======
 *.DotSettings.user
 
 # JustCode is a .NET coding addin-in
 .JustCode
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
+
 
 # TeamCity is a build add-in
 _TeamCity*
@@ -133,7 +130,6 @@ _TeamCity*
 *.dotCover
 
 # NCrunch
-<<<<<<< HEAD
 *.ncrunch*
 .*crunch*.local.xml
 
@@ -148,7 +144,7 @@ AutoTest.Net/
 # Web workbench (sass)
 .sass-cache/
 
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
+
 # Installshield output folder
 [Ee]xpress/
 
@@ -166,7 +162,6 @@ DocProject/Help/html
 publish/
 
 # Publish Web Output
-<<<<<<< HEAD
 *.Publish.xml
 
 # NuGet Packages Directory
@@ -194,25 +189,21 @@ csx
 
 # Windows Azure Build Output
 csx/
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
 *.build.csdef
 
 # Windows Store app package directory
 AppPackages/
 
 # Others
-<<<<<<< HEAD
 sql/
 *.Cache
 =======
 *.[Cc]ache
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
 ClientBin/
 [Ss]tyle[Cc]op.*
 ~$*
 *~
 *.dbmdl
-<<<<<<< HEAD
 *.[Pp]ublish.xml
 *.pfx
 *.publishsettings
@@ -222,26 +213,24 @@ ClientBin/
 *.publishsettings
 node_modules/
 bower_components/
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
+
 
 # RIA/Silverlight projects
 Generated_Code/
 
-<<<<<<< HEAD
+
 # Backup & report files from converting an old project file to a newer
 # Visual Studio version. Backup files are not needed, because we have git ;-)
 =======
 # Backup & report files from converting an old project file
 # to a newer Visual Studio version. Backup files are not needed,
 # because we have git ;-)
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
 _UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 
 # SQL Server files
-<<<<<<< HEAD
 App_Data/*.mdf
 App_Data/*.ldf
 
@@ -289,4 +278,4 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
->>>>>>> 6713671d47d2d914a284ce92866878389700fc38
+
