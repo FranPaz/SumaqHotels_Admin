@@ -9,8 +9,7 @@ namespace SumaqHotels_Admin.Models
     {
         public int Id { get; set; }
         public int NroHab { get; set; }
-        public string Descripcion { get; set; }
-        public string Piso { get; set; }
+        public string Descripcion { get; set; }        
         public int Plazas { get; set; } //numero maximo de plazas para la habitacion
 
         //relacion 1 a m con TipoHab (uno)

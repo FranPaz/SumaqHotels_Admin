@@ -4,7 +4,7 @@
  * performs a AND between 'name: $select.search' and 'age: $select.search'.
  * We want to perform a OR.
  */
-inetApp.filter('propsFilter', function () {
+sumaqHotelsApp.filter('propsFilter', function () {
     return function (items, props) {
         var out = [];
 
