@@ -47,13 +47,19 @@
                       templateUrl: '/Scripts/App/TiposHabitacion/Partials/tiposHabMain.html',
                       controller: 'tiposHabCtrl',
                       resolve: {
-                          tiposHabDataFactory: 'tiposHabDataFactory',
-                          infoTipoHab: function () {
-                              return { value: [] };
-                          },
+                          tiposHabDataFactory: 'tiposHabDataFactory',                          
                           listadoTiposHab: function (tiposHabDataFactory) {
                               return tiposHabDataFactory.query();
-                          }
+                          },
+                          tiposCamasDataFactory: 'tiposCamasDataFactory',
+                          listadoTiposCamas: function (tiposCamasDataFactory) {
+                              return tiposCamasDataFactory.query();
+                          },
+                          serviciosDataFactory: 'serviciosDataFactory',
+                          listadoServicios: function (serviciosDataFactory) {
+                              return serviciosDataFactory.query();
+                          },
+
                       }
                   }
               }
@@ -65,7 +71,7 @@
               url: "/Habitaciones",
               views: {
                   'content': {
-                      templateUrl: '/Scripts/App/Habitaciones/Partials/habitacionesMain.html',
+                      templateUrl: '/Scripts/App/Habitaciones/Partials/habitacionesDetail.html',
                       controller: 'habitacionesCtrl',
                       resolve: {
                           habitacionesDataFactory: 'habitacionesDataFactory',

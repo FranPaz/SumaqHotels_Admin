@@ -223,14 +223,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelesController.cs" />
     <Compile Include="Controllers\ServiciosDeHabitacionesController.cs" />
+    <Compile Include="Controllers\TipoCamasController.cs" />
     <Compile Include="Controllers\TiposHabitacionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505201919436_prueba.cs" />
-    <Compile Include="Migrations\201505201923113_algo.cs" />
-    <Compile Include="Migrations\201505201923113_algo.Designer.cs">
-      <DependentUpon>201505201923113_algo.cs</DependentUpon>
+    <Compile Include="Migrations\201505261922447_prueba.cs" />
+    <Compile Include="Migrations\201505261922447_prueba.Designer.cs">
+      <DependentUpon>201505261922447_prueba.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -3253,6 +3253,7 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\App\Camas\tiposCamasDataFactory.js" />
     <Content Include="Scripts\App\Dashboard\Partials\HomeAdmin.html" />
     <Content Include="Scripts\App\Habitaciones\habitacionesCtrl.js" />
     <Content Include="Scripts\App\Habitaciones\habitacionesDataFactory.js" />
@@ -3266,6 +3267,7 @@
     <Content Include="Scripts\App\Pasajeros\Partials\pasajerosMain.html" />
     <Content Include="Scripts\App\Pasajeros\pasajerosCtrl.js" />
     <Content Include="Scripts\App\Pasajeros\pasajerosDataFactory.js" />
+    <Content Include="Scripts\App\Servicios\serviciosDataFactory.js" />
     <Content Include="Scripts\App\sumaqHotelsApp.js" />
     <Content Include="Scripts\App\TiposHabitacion\Partials\tiposHabMain.html" />
     <Content Include="Scripts\App\TiposHabitacion\tiposHabCtrl.js" />
@@ -4174,11 +4176,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505201919436_prueba.resx">
-      <DependentUpon>201505201919436_prueba.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505201923113_algo.resx">
-      <DependentUpon>201505201923113_algo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505261922447_prueba.resx">
+      <DependentUpon>201505261922447_prueba.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
