@@ -83,24 +83,41 @@
 
         //#region Pasajeros
           .state('pasajeros', {
-              url: "/Pasajeros",
+              url: "/PasajerosList",
               views: {
                   'content': {
                       templateUrl: '/Scripts/App/Pasajeros/Partials/pasajerosMain.html',
                       controller: 'pasajerosCtrl',
                       resolve: {
-                          pasajerosDataFactory: 'pasajerosDataFactory',
-                          infoPasajero: function () {
-                              return { value: [] };
-                          },
-                          listadoPasajeros: function (pasajerosDataFactory) {
-                              return pasajerosDataFactory.query();
-                          }
+                          //pasajerosDataFactory: 'pasajerosDataFactory',
+                          //infoPasajero: function () {
+                          //    return { value: [] };
+                          //},
+                          //listadoPasajeros: function (pasajerosDataFactory) {
+                          //    return pasajerosDataFactory.query();
+                          //}
                       }
                   }
               }
           })
-        //#endregion  
+
+         .state('pasajerosAdd', {
+             url: "/PasajerosAdd",
+             views: {
+                 'content': {
+                     templateUrl: '/Scripts/App/Pasajeros/Partials/pasajerosAdd.html',
+                     controller: 'pasajerosCtrl',
+                     resolve: {
+                         //pasajerosDataFactory: 'pasajerosDataFactory',
+                         //infoPasajero: function () {
+                         //    return { value: [] };
+                     }
+                 }
+             }
+         })
+
+
+//#endregion  
         
-    })
+});
 

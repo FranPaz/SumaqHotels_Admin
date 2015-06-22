@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Bootstrap -->    
+
+    <!-- Bootstrap -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
     @*<link rel="stylesheet" href="assets/lib/font-awesome/css/font-awesome.min.css">*@
@@ -58,9 +58,8 @@
 
     <!-- Google Fonts call. Font Used Open Sans & Raleway -->
     @*<link href="http://fonts.googleapis.com/css?family=Raleway:400,300" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">*@
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">*@
     <!-- +++++++++++++++++++++++++++++++ End - Blocks Template++++++++++++++++++++++++++++++++++++++++++-->
-
     <!-- Angularjs -->
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
@@ -69,37 +68,30 @@
     <script src="~/Scripts/angular-sanitize.js"></script>
     <script src="~/Scripts/angular-animate.min.js"></script>
     <!-- end -->
-
     <!-- UI Bootstrap  -->
     <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <!-- end -->
-
     <!-- Angular UI Route -->
     <script src="~/Scripts/angular-ui-router.min.js"></script>
     <!-- end -->
-
     <!-- ngTable -->
     <link href="~/Scripts/ngTable/ng-table.css" rel="stylesheet" />
     <script src="~/Scripts/ngTable/ng-table.js"></script>
     <!-- end -->
-
     <!-- Loading Bar-->
     <script src="~/Scripts/loading-bar.min.js"></script>
     <link href="~/Content/loading-bar.min.css" rel="stylesheet" />
     <!-- end -->
-
     <!-- ng Google Chart-->
     <script src="~/Scripts/ng-google-chart/ng-google-chart.js"></script>
     <!-- end -->
     <!-- Angular UI-Router-Extras-->
     <script src="~/Scripts/angular-ui-router-extras/ct-ui-router-extras.js"></script>
     <!-- end -->
-
     <!-- Module -->
     <script src="~/Scripts/App/sumaqHotelsApp.js"></script>
     <!-- end -->
-
     <!-- UI- Select -->
     <link href="~/Scripts/angular-ui-select/select.css" rel="stylesheet" />
     <script src="~/Scripts/angular-ui-select/select.js"></script>
@@ -107,28 +99,22 @@
     <link href="~/Scripts/angular-ui-select/select2-bootstrap.css" rel="stylesheet" />
     <link href="~/Scripts/angular-ui-select/select2.css" rel="stylesheet" />
     <!-- end -->
-
     <!-- Hoteles -->
     <script src="~/Scripts/App/Hoteles/hotelesCtrl.js"></script>
     <script src="~/Scripts/App/Hoteles/hotelesDataFactory.js"></script>
     <!-- end -->
-    
     <!-- Tipo de Habitaciones -->
     <script src="~/Scripts/App/TiposHabitacion/tiposHabCtrl.js"></script>
-    <script src="~/Scripts/App/TiposHabitacion/tiposHabDataFactory.js"></script>    
+    <script src="~/Scripts/App/TiposHabitacion/tiposHabDataFactory.js"></script>
     <!-- end -->
-    
     <!-- Habitaciones -->
     <script src="~/Scripts/App/Habitaciones/habitacionesCtrl.js"></script>
-    <script src="~/Scripts/App/Habitaciones/habitacionesDataFactory.js"></script>    
+    <script src="~/Scripts/App/Habitaciones/habitacionesDataFactory.js"></script>
     <!-- end -->
-
     <!-- Pasajeros -->
     <script src="~/Scripts/App/Pasajeros/pasajerosCtrl.js"></script>
-    @*<script src="~/Scripts/App/Pasajeros/pasajerosDataFactory.js"></script>*@
+    <script src="~/Scripts/App/Pasajeros/pasajerosDataFactory.js"></script>
     <!-- end -->
-    
-    
     <!--
     Select2 theme
     Bootstrap 3 theme from https://github.com/fk/select2-bootstrap-css
@@ -216,7 +202,7 @@
                         </ul><!-- /.nav -->
                     </div>
                 </div><!-- /.container-fluid -->
-            </nav><!-- /.navbar -->            
+            </nav><!-- /.navbar -->
         </div>
         <!-- fpaz: End Header -->
         <!-- fpaz: Menu Left-->
@@ -264,16 +250,31 @@
                 </li>
                 <li class="nav-divider"></li>
                 <li class="">
-                    <a ui-sref="pasajeros">
-                        <i class="fa fa-graduation-cap"></i><span class="link-title">&nbsp; Pasajeros</span>
+                    <a ui-sref="#">
+                        <i class="fa fa-graduation-cap"></i>
+                        <span class="link-title">&nbsp; Pasajeros</span>
+                        <span class="fa arrow"></span>
                     </a>
+                    <ul>
+                        <li>
+                            <a ui-sref="pasajeros">
+                                <i class="fa fa-graduation-cap"></i><span class="link-title">&nbsp; Lista de Pasajeros</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="pasajerosAdd">
+                                <i class="fa fa-graduation-cap"></i><span class="link-title">&nbsp; Nuevo Pasajero</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
                 </li>
                 <li class="">
                     <a ui-sref="tipoHab">
                         <i class="fa fa-sitemap"></i><span class="link-title">&nbsp; Tipos de Habitaciones</span>
                     </a>
                 </li>
-                <li class="nav-divider"></li>        
+                <li class="nav-divider"></li>
 
                 <li class="nav-divider"></li>
                 <li class="">
@@ -283,7 +284,7 @@
                             Configuraciones
                         </span>
                         <span class="fa arrow"></span>
-                    </a>                    
+                    </a>
                 </li>
                 <li class="nav-divider"></li>
                 <li>
@@ -313,9 +314,9 @@
         <p>2015 &copy; Sumaq Hotels</p>
     </footer>
     <!-- /#footer -->
-    <!--jQuery 2.1.3 -->        
+    <!--jQuery 2.1.3 -->
     <script src="~/Scripts/jquery-2.1.3.min.js"></script>
-    <!--Bootstrap -->    
+    <!--Bootstrap -->
     <script src="~/Scripts/bootstrap.min.js"></script>
 
     <!-- Screenfull -->
@@ -323,6 +324,6 @@
     <!-- Metis core scripts -->
     <script src="assets/js/core.js"></script>
     <!-- Metis demo scripts -->
-    <script src="assets/js/app.min.js"></script>    
+    <script src="assets/js/app.min.js"></script>
 </body>
 </html>

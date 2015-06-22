@@ -1,4 +1,4 @@
-﻿sumaqHotelsApp.controller('pasajerosCtrl', function ($scope, $stateParams, $state, $filter, ngTableParams, pasajerosDataFactory, listadoPasajeros, infoPasajero) {
+﻿sumaqHotelsApp.controller('pasajerosCtrl', function ($scope, $stateParams, $state, $filter, ngTableParams, pasajerosDataFactory) {   //, listadoPasajeros, infoPasajero
 
     
 });
