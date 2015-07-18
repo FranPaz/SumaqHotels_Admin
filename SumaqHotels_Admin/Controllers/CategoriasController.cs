@@ -12,57 +12,58 @@ using SumaqHotels_Admin.Models;
 
 namespace SumaqHotels_Admin.Controllers
 {
-    public class HotelesController : ApiController
+    public class CategoriasController : ApiController
     {
         private SumaqHotels_Context db = new SumaqHotels_Context();
 
-        // GET: api/Hoteles
-        public IHttpActionResult GetHotels()
+        // GET: api/Categorias
+        public IHttpActionResult GetCategorias()
         {
             try
             {
-                var listHoteles = db.Hoteles;
-                if (listHoteles == null)
+                var listCategorias = db.Categorias.ToList();
+                if (listCategorias == null)
                 {
-                    return BadRequest("No existen hoteles");
+                    return BadRequest("No existen categorias");
                 }
 
-                return Ok(listHoteles);
+                return Ok(listCategorias);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message.ToString());
             }
+            
         }
 
-        // GET: api/Hoteles/5
-        [ResponseType(typeof(Hotel))]
-        public IHttpActionResult GetHotel(int id)
+        // GET: api/Categorias/5
+        [ResponseType(typeof(Categoria))]
+        public IHttpActionResult GetCategoria(int id)
         {
-            Hotel hotel = db.Hoteles.Find(id);
-            if (hotel == null)
+            Categoria categoria = db.Categorias.Find(id);
+            if (categoria == null)
             {
                 return NotFound();
             }
 
-            return Ok(hotel);
+            return Ok(categoria);
         }
 
-        // PUT: api/Hoteles/5
+        // PUT: api/Categorias/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutHotel(int id, Hotel hotel)
+        public IHttpActionResult PutCategoria(int id, Categoria categoria)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != hotel.Id)
+            if (id != categoria.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(hotel).State = EntityState.Modified;
+            db.Entry(categoria).State = EntityState.Modified;
 
             try
             {
@@ -70,7 +71,7 @@ namespace SumaqHotels_Admin.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!HotelExists(id))
+                if (!CategoriaExists(id))
                 {
                     return NotFound();
                 }
@@ -83,35 +84,35 @@ namespace SumaqHotels_Admin.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Hoteles
-        [ResponseType(typeof(Hotel))]
-        public IHttpActionResult PostHotel(Hotel hotel)
+        // POST: api/Categorias
+        [ResponseType(typeof(Categoria))]
+        public IHttpActionResult PostCategoria(Categoria categoria)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Hoteles.Add(hotel);
+            db.Categorias.Add(categoria);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = hotel.Id }, hotel);
+            return CreatedAtRoute("DefaultApi", new { id = categoria.Id }, categoria);
         }
 
-        // DELETE: api/Hoteles/5
-        [ResponseType(typeof(Hotel))]
-        public IHttpActionResult DeleteHotel(int id)
+        // DELETE: api/Categorias/5
+        [ResponseType(typeof(Categoria))]
+        public IHttpActionResult DeleteCategoria(int id)
         {
-            Hotel hotel = db.Hoteles.Find(id);
-            if (hotel == null)
+            Categoria categoria = db.Categorias.Find(id);
+            if (categoria == null)
             {
                 return NotFound();
             }
 
-            db.Hoteles.Remove(hotel);
+            db.Categorias.Remove(categoria);
             db.SaveChanges();
 
-            return Ok(hotel);
+            return Ok(categoria);
         }
 
         protected override void Dispose(bool disposing)
@@ -123,9 +124,9 @@ namespace SumaqHotels_Admin.Controllers
             base.Dispose(disposing);
         }
 
-        private bool HotelExists(int id)
+        private bool CategoriaExists(int id)
         {
-            return db.Hoteles.Count(e => e.Id == id) > 0;
+            return db.Categorias.Count(e => e.Id == id) > 0;
         }
     }
 }

@@ -16,10 +16,26 @@ namespace SumaqHotels_Admin.Controllers
     {
         private SumaqHotels_Context db = new SumaqHotels_Context();
 
-        // GET: api/TiposHabitaciones
-        public IQueryable<TipoHabitacion> GetTipoHabitacions()
+ // GET: api/TiposHabitaciones
+        public IHttpActionResult GetTipoHabitacions()
         {
-            return db.TiposHabitaciones;
+            try
+            {
+                var listaTiposHabitaciones = db.TiposHabitaciones
+                .Include(t => t.CamasAdicionales)
+                .Include(t => t.ServiciosDeHabitacion)
+                .ToList();
+
+                if (listaTiposHabitaciones == null)
+                {
+                    return BadRequest("No Existen Tipos de Habitaciones");
+                }
+                return Ok(listaTiposHabitaciones);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
+            }            
         }
 
         // GET: api/TiposHabitaciones/5
@@ -70,7 +86,7 @@ namespace SumaqHotels_Admin.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/TiposHabitaciones
+       // POST: api/TiposHabitaciones
         [ResponseType(typeof(TipoHabitacion))]
         public IHttpActionResult PostTipoHabitacion(TipoHabitacion tipoHabitacion)
         {
@@ -79,10 +95,19 @@ namespace SumaqHotels_Admin.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.TiposHabitaciones.Add(tipoHabitacion);
-            db.SaveChanges();
+            try
+            {
+                db.TiposHabitaciones.Add(tipoHabitacion);
+                db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = tipoHabitacion.Id }, tipoHabitacion);
+
+                return Ok("Tipo de Habitacion Creado Correctamente");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
+            }
+            
         }
 
         // DELETE: api/TiposHabitaciones/5

@@ -25,6 +25,8 @@ namespace SumaqHotels_Admin.Models
         // 1 a M con Hotel (uno)
         public int HotelId { get; set; }
         public virtual Hotel Hotel { get; set; }
+        // 1 a M con ImagenHotel (muchos)
+        public virtual ICollection<ImagenHotel> ImagenesHotel { get; set; } // array con las imagenes del hotel en general
     }
 
     public class ServicioDeHabitacion // servicios de tipos de habitaciones

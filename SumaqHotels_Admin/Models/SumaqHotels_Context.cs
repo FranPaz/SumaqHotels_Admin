@@ -40,10 +40,12 @@ namespace SumaqHotels_Admin.Models
         public System.Data.Entity.DbSet<SumaqHotels_Admin.Models.ServicioDeHabitacion> ServiciosDeHabitacion { get; set; }
         public System.Data.Entity.DbSet<SumaqHotels_Admin.Models.CamaAdicional> CamasAdicionales { get; set; }
         public System.Data.Entity.DbSet<SumaqHotels_Admin.Models.TipoCama> TiposCamas { get; set; }
+		public DbSet<SumaqHotels_Admin.Models.ImagenHotel> ImagenesHotel { get; set; }
+        public DbSet<SumaqHotels_Admin.Models.ImagenTipoHabitacion> ImagenesTipoHabitacion { get; set; }
         #endregion
     }
 
-    public class SumaqHotelsDbInitialier : DropCreateDatabaseIfModelChanges<SumaqHotels_Context>
+    public class SumaqHotelsDbInitialier : DropCreateDatabaseAlways<SumaqHotels_Context>
     {
         protected override void Seed(SumaqHotels_Context context) // fpaz: semilla para el llenado automatico de la BD
         {

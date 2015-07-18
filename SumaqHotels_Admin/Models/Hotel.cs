@@ -34,6 +34,8 @@ namespace SumaqHotels_Admin.Models
         // 1 a M con TipoHabitacion (muchos)
         public virtual ICollection<TipoHabitacion> TiposHabitaciones { get; set; }
 
+		// 1 a M con ImagenHotel (muchos)
+        public virtual ICollection<ImagenHotel> ImagenesHotel { get; set; } // array con las imagenes del hotel en general
     }
 
     public class HotelDireccion
