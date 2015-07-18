@@ -1,6 +1,8 @@
-﻿sumaqHotelsApp.controller('hotelesCtrl', function ($scope, $stateParams, $state, $filter, ngTableParams, hotelesDataFactory)
-//, listadoHoteles, infoHoteles
-{
+﻿sumaqHotelsApp.controller('hotelesCtrl', function ($scope, $stateParams, $state, $filter, ngTableParams
+    , hotelesDataFactory, infoHotel, listadoTiposHoteles, listadoCategorias) {
+//#region Variables de Scope de Ivan
+
+
      $scope.oneAtATime = true;
      $scope.Hotel = [];
      $scope.Hotel.Stars = 1;
@@ -48,7 +50,50 @@
   for (var i = 0; i < 4; i++) {
       $scope.addSlide(i);
   }
+//#endregion
+//#region Inicializacion de variables de Scope
+    $scope.infoHotel = infoHotel;
+    $scope.listTiposHoteles = listadoTiposHoteles;
+    $scope.tipoHabSelec = {};
+    $scope.tipoHabSelec.selected = {};
 
+    $scope.listCategorias = listadoCategorias;
+
+    $scope.editValue = false; // variable que voya usar para activar y desactivar los modos de edicion 
+    $scope.addValue = true; //para activar el alta de Campos
+    
+    $scope.cantEstrellas = 0;
+    //#endregion
+
+    //#region Alta de hotel
+    $scope.tipoHabAdd = function (infoHotel) {
+        hotelesDataFactory.save(infoHotel).$promise.then(
+            function () {
+                //$scope.addCampoProg();                
+                alert('Nuevo Habitacion Guardado');
+                $scope.clear();
+
+            },
+            function (response) {
+                $scope.errors = response.data;
+                alert('Error al guardar el Habitacion Programatico');
+            });
+    };
+    //#endregion
+
+    //#region limpieza
+    $scope.clear = function () { // limpia los campos de admin. y los deja listo para agregar un nuevo registro o limpiar los datos q actualmente estoy escribiendo
+        $scope.cantEstrellas = 0;
+        $scope.infoHotel = {};        
+        $scope.tipoHabSelec = {};
+        $scope.tipoHabSelec.selected = {};       
+
+        if (!$scope.addValue) {
+            $scope.editValue = false;
+            $scope.addValue = true;
+        }
+    };
+    //#endregion
 
 
 

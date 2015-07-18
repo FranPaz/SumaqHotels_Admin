@@ -6,7 +6,7 @@
                 <div class="icons">
                     <i class="fa fa-institution"></i>
                 </div>
-                <h5>Carga Nueva habitacion</h5>
+                <h5>Carga Nueva Habitacion</h5>
                 <div class="toolbar">
                     <div class="btn btn-sm btn-default minimize-box">
                         <a ng-click="addhabitacionCollapse = !addhabitacionCollapse">
@@ -22,14 +22,7 @@
                             <label class="control-label col-lg-3">Tipo Habitacion</label>
                             <label class="control-label col-lg-1">&nbsp;</label>
                             <div class="col-lg-8">
-                                <ui-select ng-model="tipoHabBuscada.selected" theme="select2" style="min-width: 200px;">
-                                    <ui-select-match placeholder="Busque por Nombre">{{$select.selected.Nombre}}</ui-select-match>
-                                    <ui-select-choices repeat="tipoHab in tiposHab | propsFilter: {Nombre: $select.search}">
-                                        <small>
-                                            Nombre: <span ng-bind-html="tipoHab.Nombre | highlight: $select.search"></span>
-                                        </small>
-                                    </ui-select-choices>
-                                </ui-select>
+                                {{tipoHab.Nombre}}
                             </div>
                         </div>
                     </div>
@@ -38,30 +31,24 @@
                             <label class="control-label col-lg-7">N° de Habitacion</label>
                             <div class="col-lg-5">
                                 <div class="input-group col-lg-12">
-                                    <input ng-model="habitacion.NroHab" class="form-control" type="text">
+                                    <input ng-model="infoHab.NroHab" class="form-control" type="text">
                                 </div>
                             </div>
                         </div>                        
                     </div>
                     <div class="form-group">
                         <div class="col-lg-8">
-                            <label class="control-label col-lg-3">Plazas</label>
+                            <label class="control-label col-lg-3">Plazas</label>                            
                             <div class="col-lg-3">
                                 <div class="input-group col-lg-12">
-                                    <label class="col-lg-3">1P</label>
-                                    <input class="form-control col-lg-9" type="number">
+                                    <label class="col-lg-3">Camas de 1 Plaza</label>
+                                    <input class="form-control col-lg-9" type="number" ng-model="infoHab.Plazas">
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="input-group col-lg-12">
-                                    <label class="col-lg-3">1P</label>
-                                    <input class="form-control col-lg-9" type="number">
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="input-group col-lg-12">
-                                    <label class="col-lg-3">1P</label>
-                                    <input class="form-control col-lg-9" type="number">
+                                    <label class="col-lg-3">Camas de 2 Plazas</label>
+                                    <input class="form-control col-lg-9" type="number" ng-model="infoHab.Plazas">
                                 </div>
                             </div>
                         </div>
@@ -71,14 +58,14 @@
                         <div class="col-lg-12">
                             <label class="control-label col-lg-12">Descripcion Adicional</label>
                             <div class="col-lg-8">
-                                <textarea ng-model="infoTipoHab.Descripcion" class="form-control"></textarea>
+                                <textarea ng-model="infoHab.Descripcion" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
                 </form>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" ng-click="habitacionAdd(habitacion)">Guardar</button>
-                    <button class="btn btn-warning" ng-click="cancelhabitacionAdd()">Cancelar</button>
+                    <button class="btn btn-primary" ng-click="habitacionAdd(infoHab)">Guardar</button>
+                    <button class="btn btn-warning" ng-click="cancel()">Cancelar</button>
                 </div>
             </div>
         </div>

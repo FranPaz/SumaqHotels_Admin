@@ -53,47 +53,51 @@
                                 Datos Basicos<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                             </accordion-heading> <!--Encabezado-->
 
+							<!-- Datos Basicos de Hotel -->
                             <div class="row">
                                 <div class="row">
                                     <div class="col-xs-10 col-xs-offset-1">
                                         <label>Nombre</label>
-                                        <input type="text" ng-model="Hotel.Nombre" class="form-control" placeholder="Ingrese el nombre de su hotel">
+                                        <input type="text" ng-model="infoHotel.Nombre" class="form-control" placeholder="Ingrese el nombre de su hotel">
                                     </div>
                                 </div> <!--Nombre-->
 
                                 <div class="row">
                                     <div class="col-xs-8 col-xs-offset-1">
                                         <label>Ubicacion</label>
-                                        <input type="text" ng-model="Hotel.Ubicacion" class="form-control" placeholder="Ubicacion Central">
+                                        <input type="text" ng-model="infoHotel.DireccionComun" class="form-control" placeholder="Ubicacion Central">
                                     </div>
                                     <div class="col-xs-2">
                                         <label>C.P.</label>
-                                        <input type="text" ng-model="Hotel.CP" class="form-control" placeholder="Ejemplo: 4200">
+                                        <input type="text" ng-model="infoHotel.CodPostal" class="form-control" placeholder="Ejemplo: 4200">
                                     </div>
                                 </div> <!--Ubicacion/CP-->
 
                                 <div class="row">
                                     <div class="col-xs-4 col-xs-offset-1">
                                         <label>Telefono</label>
-                                        <input type="text" ng-model="Hotel.Tel" class="form-control" placeholder="(0385) 4 999999">
+                                        <input type="text" ng-model="infoHotel.Telefono" class="form-control" placeholder="(0385) 4 999999">
                                     </div>
                                     <div class="col-xs-6">
-                                        <label>Contacto Skype</label>
-                                        <input type="text" ng-model="Hotel.Skype" class="form-control" placeholder="SumaqSkype">
+                                        <label>Contacto Skype</label
+                                        <!--<input type="text" ng-model="Hotel.Skype" class="form-control" placeholder="SumaqSkype">-->
+                                        <input type="text" class="form-control" placeholder="SumaqSkype">
                                     </div>
                                 </div><!--Telefono/Skype-->
 
                                 <div class="row">
                                     <div class="col-xs-4 col-xs-offset-1">
                                         <label>Email</label>
-                                        <input type="text" ng-model="Hotel.Email" class="form-control" placeholder="MyMail@MyDomain.com">
+                                        <!--<input type="text" ng-model="Hotel.Email" class="form-control" placeholder="MyMail@MyDomain.com">-->
+                                        <input type="text" class="form-control" placeholder="MyMail@MyDomain.com">
                                     </div> <!--Email-->
                                     <div class="col-xs-6">
                                         <label>Web</label>
-                                        <input type="text" ng-model="Hotel.Web" class="form-control" placeholder="www.SumaqHotels.com.ar">
+                                        <input type="text" ng-model="Hotel.UrlWeb" class="form-control" placeholder="www.SumaqHotels.com.ar">
                                     </div><!--Web-->
                                 </div><!--Email/Web-->
-                            </div>  <!-- Datos Basicos de Hotel -->
+                            </div>  
+							<!-- Fin Datos Basicos -->
 
                         </accordion-group> <!--AccordionGroup1-->
 
@@ -104,6 +108,7 @@
                             </accordion-heading> <!--Encabezado-->
 
 
+							 <!-- Configuracion  -->
                             <div class="row">
 
                                 <div class="row">
@@ -115,7 +120,8 @@
 
                                     <div class="col-xs-3 col-md-offset-1">
                                         <label>N° de Habitaciones</label>
-                                        <input type="number" ng-model="Hotel.Habitaciones" class="form-control" value="0">
+                                        <!--<input type="number" ng-model="Hotel.Habitaciones" class="form-control" value="0">-->
+                                        <input type="number" class="form-control" value="0">
                                     </div>
 
                                 </div>
@@ -127,35 +133,50 @@
                                         <label>Categoria</label>
                                         <br />
                                         <div class="col-xs-3">
-                                            <rating ng-model="Hotel.Stars" min="1" max="5" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
-                                            <label> {{Hotel.Stars}} Estrellas</label>
+                                            <rating ng-model="cantEstrellas" min="1" max="5" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+
+                                            <label> {{cantEstrellas}} Estrellas</label>
                                         </div>
 
                                     </div>
                                     <div class="col-xs-7">
                                         <label>Tipo de Hotel</label>
-                                        <br />
-                                        <div class="btn-group" dropdown>
-                                            <button type="button" class="btn btn-primary">Seleccione su Tipo de Hotel</button>
-                                            <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
-                                                <span class="caret"></span>
-                                                <span class="sr-only">Split button!</span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a ng-click="">SPA</a></li>
-                                                <li><a href="#">Resort</a></li>
-                                                <li><a href="#">Hotel</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Otros</a></li>
-                                            </ul>
+                                        <label class="control-label col-lg-1">&nbsp;</label>
+                                        <div class="col-lg-8">
+                                            <ui-select ng-model="tipoHotelSelecionado.selected" theme="select2" style="min-width: 200px;">
+                                                <ui-select-match placeholder="Busque por Nombre">{{$select.selected.Nombre}}</ui-select-match>
+                                                <ui-select-choices repeat="tipo in listTiposHoteles | propsFilter: {Nombre: $select.search}">
+                                                    <small>
+                                                        <span ng-bind-html="tipo.Nombre | highlight: $select.search"></span>
+                                                    </small>
+                                                </ui-select-choices>
+                                            </ui-select>
                                         </div>
                                     </div>
                                 </div>
 
                             </div> <!-- Configuracion Hotel  -->
 
+							<!-- Fin Configuracion -->
+        
+                            <!-- Inicio Carrusel -->
                             <br />
+                            <div flow-init="{target: '/upload'}"
+                                 flow-files-submitted="$flow.upload()"
+                                 flow-file-success="$file.msg = $message">
 
+                                <input type="file" flow-btn />
+                                Input OR Other element as upload button
+                                <span class="btn" flow-btn>Upload File</span>
+
+                                <table>
+                                    <tr ng-repeat="file in $flow.files">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{file.name}}</td>
+                                        <td>{{file.msg}}</td>
+                                    </tr>
+                                </table>
+                            </div>
                             <div class="row">
                                 <div class="col-xs-10 col-xs-offset-2">
                                     <div style="width:80% ; height:50%">
@@ -173,6 +194,7 @@
                                     </div>
                                 </div>
                             </div> <!--Slider de imagenes-->
+						<!-- Fin Carrusel -->
 
                         </accordion-group> <!--AccordionGroup2-->
 

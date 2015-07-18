@@ -75,6 +75,10 @@
     <!-- Angular UI Route -->
     <script src="~/Scripts/angular-ui-router.min.js"></script>
     <!-- end -->
+
+    <!-- daypilot-->
+    <script src="~/Scripts/daypilot/daypilot-all.min.js"></script>
+    <!-- end -->
     <!-- Module -->
     <script src="~/Scripts/App/sumaqHotelsApp.js"></script>
     <!-- end -->
@@ -97,8 +101,12 @@
     <link href="~/Scripts/angular-ui-select/select.css" rel="stylesheet" />
     <script src="~/Scripts/angular-ui-select/select.js"></script>
     <script src="~/Scripts/angular-ui-select/basicSearchFilter.js"></script>
-    <link href="~/Scripts/angular-ui-select/select2-bootstrap.css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <link rel="stylesheet" href="http://fk.github.io/select2-bootstrap-css/css/select2-bootstrap.css">    
+
+    <!--<link href="~/Scripts/angular-ui-select/select2-bootstrap.css" rel="stylesheet" />
     <link href="~/Scripts/angular-ui-select/select2.css" rel="stylesheet" />
+	-->
     <!-- end -->
     <!-- Hoteles -->
     <script src="~/Scripts/App/Hoteles/hotelesCtrl.js"></script>
@@ -123,6 +131,17 @@
 
     <!-- Servicios de Habitacion-->
     <script src="~/Scripts/App/Servicios/serviciosDataFactory.js"></script>
+    <!-- end -->
+	<!-- Tipos de Hoteles-->
+    <script src="~/Scripts/App/TiposHoteles/tiposHotelesDataFactory.js"></script>
+    <!-- end -->
+
+    <!-- Categorias-->
+    <script src="~/Scripts/App/Categorias/categoriasDataFactory.js"></script>
+    <!-- end -->
+
+    <!-- Booking -->
+    <script src="~/Scripts/App/Booking/bookingCtrl.js"></script>
     <!-- end -->
     <!--
     Select2 theme
@@ -247,6 +266,11 @@
                 <li class="nav-divider"></li>
                 <li class="nav-header">Menu</li>
                 <li class="nav-divider"></li>
+				<li class="">
+                    <a ui-sref="booking">
+                        <i class="fa fa-book"></i><span class="link-title">&nbsp;Booking</span>
+                    </a>
+                </li>
                 <li class="">
                     <a ui-sref="hotel">
                         <i class="fa fa-institution"></i><span class="link-title">&nbsp;Hoteles</span>

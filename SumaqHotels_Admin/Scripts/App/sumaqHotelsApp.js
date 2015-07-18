@@ -1,5 +1,5 @@
 ﻿var sumaqHotelsApp = angular.module('sumaqHotelsApp', ['ngRoute', 'ngResource', 'ui.router', 'ngCookies', 'ui.bootstrap', 'ngTable', 'googlechart',
-  'ngSanitize', 'ngAnimate', 'ui.select', 'ct.ui.router.extras', 'angular-loading-bar'])
+  'ngSanitize', 'ngAnimate', 'ui.select', 'ct.ui.router.extras', 'angular-loading-bar', 'daypilot'])
     .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $stickyStateProvider, cfpLoadingBarProvider) {
 
         cfpLoadingBarProvider.includeSpinner = true;
@@ -19,6 +19,15 @@
                   }
               }
           })
+			.state('booking', {
+                url: "/Booking",
+                views: {
+                    'content': {
+                        templateUrl: '/Scripts/App/Booking/Partials/demo.html',
+                        controller: 'bookingCtrl'
+                    }
+                }
+            })
         //#endregion  
 
         //#region Hoteles
@@ -32,6 +41,14 @@
                           hotelesDataFactory: 'hotelesDataFactory',
                           infoHotel: function () {
                               return { value: [] };
+                          },
+						  tiposHotelesDataFactory: 'tiposHotelesDataFactory',
+                          listadoTiposHoteles: function (tiposHotelesDataFactory) {
+                              return tiposHotelesDataFactory.query();
+                          },
+                          categoriasDataFactory: 'categoriasDataFactory',
+                          listadoCategorias: function (categoriasDataFactory) {
+                              return categoriasDataFactory.query();
                           }
                       }
                   }
@@ -80,6 +97,9 @@
                           },
                           listadoHabitaciones: function (habitacionesDataFactory) {
                               return habitacionesDataFactory.query();
+                          },
+						  prmTipoHab: function () {
+                              return { value: [] };
                           }
                       }
                   }
